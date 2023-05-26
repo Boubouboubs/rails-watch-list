@@ -1,10 +1,24 @@
-<h1>Lists</h1>
-  <ul>
-    <% @lists.each do |list| %>
-      <li>
-        <%= link_to list.name, list_path(list) %>
-      </li>
-    <% end %>
-  </ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1633680266538-70b2320747f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY4fHxjaW5lbWF8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=600&q=60);">
+  <div class="container">
+    <h1>Save any kind of movie</h1>
+  </div>
+</div>
 
-  <div><%= link_to "Create a new list", new_list_path %></div>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-10">
+      <h2>My lists</h2>
+        <div class="row">
+            <% @lists.each do |list| %>
+              <div class="card text-center">
+                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bW92aWV8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=600&q=60" class="card-img"  alt="">
+                <div class="card-img-overlay">
+                  <h5 class="card-text"><%= link_to list.name, list_path(list), class: "btn btn-light" %></h5>
+                </div>
+              </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="col-2"><%= link_to "Create a new list", new_list_path, class: "btn btn-outline-success" %></div>
+    </div>
+</div>

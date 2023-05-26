@@ -4,4 +4,5 @@
     <%= bookmark.movie.title %> - "<%= bookmark.comment %>" <%= link_to "Delete bookmark", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
   <% end %>
+  <div><%= link_to "Create a new bookmark", new_list_bookmark_path(@list) %></div>
   <div><%= link_to "Back to lists", lists_path %></div>
